@@ -1,15 +1,15 @@
 $(function() {
   title('Simple Ajax');
-  getJson();
+  getSampleJson();
 });
 
 function title (str) {
   $('body').append('<h1>'+str+'</h1>');
 }
 
-function getJson() {
+function getSampleJson() {
   $.ajax({
-    url: 'sample.json',               // local file
+    url: 'sample.json',               // local json file with sample data
     timeout: 2000,                    // 2 seconds
     dataType: 'json',
     type: 'GET',                      // default
