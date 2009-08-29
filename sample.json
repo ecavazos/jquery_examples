@@ -1,0 +1,24 @@
+{
+  narutoverse: [
+    {
+      name: 'Naruto',
+      sex: 'Male'
+    },
+    {
+      name: 'Kakashi',
+      sex: 'Male'
+    },
+    {
+      name: 'Jiraiya',
+      sex: 'Male'
+    },
+    {
+      name: 'Sakura',
+      sex: 'Male'
+    },
+    {
+      name: 'Tsunade',
+      sex: 'Male'
+    },
+  ]
+}
