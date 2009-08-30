@@ -8,12 +8,17 @@ function title (str) {
 }
 
 function onDemandLink () {
-  $('body').append('<a href="" >Click me for some on-demand a-sync high jinks')
+  $('body').append('<a href="" >Click me for some on-demand a-sync high jinks</a>')
     .andSelf().bind('click', onDemandLinkClickHandler);
 }
 
 function onDemandLinkClickHandler(event) {
+  
+  // I could have put all the getSampleJson()
+  // code here, but it's more readable in its
+  // own method.
   getSampleJson();
+  
   event.preventDefault();
   event.stopPropagation();
 }

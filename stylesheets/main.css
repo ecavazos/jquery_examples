@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, "MS Trebuchet", sans-serif;
+  font-size: 100%;
+  line-height: 1.125em;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  background-color: #ddd;
+  margin: 0 0 4px 0;
+  padding: 5px;
+}
+li p {
+  margin: 0;
+}
+div {
+  margin: 0 0 15px 0;
+}
+p {
+  margin: 0;
+  padding: 0 0 15px 0;
+}
