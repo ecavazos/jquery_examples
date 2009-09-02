@@ -1,13 +1,17 @@
 $(function() {
-  title('Simple Ajax');
+  init('body');
   getSampleJson();
 });
 
-function title (str) {
-  $('body').append('<h1>'+str+'</h1>');
+function init (selector) {
+  $(selector)
+    .append('<h1>Simple Ajax Example</h1>')
+    .append('<div id="data"></div>');
 }
 
 function getSampleJson() {
+  loading();
+  
   $.ajax({
     url: 'sample.json',               // local json file with sample data
     timeout: 2000,                    // 2 seconds
@@ -17,13 +21,19 @@ function getSampleJson() {
       success(data);
     },
     error: function(data) {           // error callback
-      error(data);
+      error();
     }
   });
 }
 
+function loading() {
+  $('#data').append('Loading ...');
+}
+
 function success (data) {
-  $('h1').after('<ul id="ninjas"></ul>');
+  $('#data')
+    .empty()
+    .append('<ul id="ninjas"></ul>');
   
   var ninjas = data.narutoverse;
   
@@ -32,6 +42,8 @@ function success (data) {
   }
 }
 
-function error (data) {
-  alert('error handling code goes here.');
+function error () {
+  $('#data')
+    .empty()
+    .append('Error handling code goes here.');
 }
