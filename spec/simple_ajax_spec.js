@@ -1,7 +1,3 @@
-function test() {
-  console.log('blah');
-}
-
 Screw.Unit(function() {
   describe('Simple Ajax', function() {
     
