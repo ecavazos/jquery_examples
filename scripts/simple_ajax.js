@@ -3,6 +3,19 @@ $(function() {
   getSampleJson();
 });
 
+var ajaxOptions = {
+  url: 'sample.json',               // local json file with sample data
+  timeout: 2000,                    // 2 seconds
+  dataType: 'json',
+  type: 'GET',                      // default
+  success: function(data) {         // success callback
+    success(data);
+  },
+  error: function(data) {           // error callback
+    error();
+  }
+};
+
 function init (selector) {
   $(selector)
     .append('<h1>Simple Ajax Example</h1>')
@@ -11,19 +24,7 @@ function init (selector) {
 
 function getSampleJson() {
   loading();
-  
-  $.ajax({
-    url: 'sample.json',               // local json file with sample data
-    timeout: 2000,                    // 2 seconds
-    dataType: 'json',
-    type: 'GET',                      // default
-    success: function(data) {         // success callback
-      success(data);
-    },
-    error: function(data) {           // error callback
-      error();
-    }
-  });
+  $.ajax(ajaxOptions);
 }
 
 function loading() {

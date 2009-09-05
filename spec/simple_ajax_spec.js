@@ -1,3 +1,7 @@
+function test() {
+  console.log('blah');
+}
+
 Screw.Unit(function() {
   describe('Simple Ajax', function() {
     
@@ -31,19 +35,18 @@ Screw.Unit(function() {
     });
     
     describe('getSampleJson()', function() {
-      var ajaxMock;
       
-      before(function() {
-        $.ajax = function(opts) {
-          ajaxMock = {
-            url: opts.url
-          };
-        };
+      it('should notify the user that data is loading', function() {
+        // hack-ish
+        var clicked;
+        loading = function() {clicked = true;};
+        getSampleJson();
+        expect(clicked).to(be_true);
       });
       
-      it('should set url to "sample.json"', function() {
+      it('should send ajax request for "sample.json"', function() {
+        mock($).should_receive('ajax').with_arguments(ajaxOptions).exactly('once');
         getSampleJson();
-        expect(ajaxMock.url).to(equal, 'sample.json');
       });
       
     });
