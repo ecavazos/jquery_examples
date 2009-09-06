@@ -1,15 +1,13 @@
 $(function() {
-  title('Simple Ajax On Demand');
-  onDemandLink();
+  appendOnDemandLinkAfter('#example h2');
 });
 
-function title (str) {
-  $('body').append('<h1>'+str+'</h1>');
-}
-
-function onDemandLink () {
-  $('body').append('<a href="" >Click me for some on-demand a-sync high jinks</a>')
-    .andSelf().bind('click', onDemandLinkClickHandler);
+function appendOnDemandLinkAfter (selector) {
+  $(selector)
+    .after('<a href="" >Click me for some on-demand a-sync high jinks</a>');
+    
+  $(selector + '+a')
+    .bind('click', onDemandLinkClickHandler);
 }
 
 function onDemandLinkClickHandler(event) {
@@ -39,7 +37,7 @@ function getSampleJson() {
 }
 
 function success (data) {
-  $('h1').after('<ul id="ninjas"></ul>');
+  $('#example a').after('<ul id="ninjas"></ul>');
   
   var ninjas = data.narutoverse;
   
