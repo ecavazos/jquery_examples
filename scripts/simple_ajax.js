@@ -1,5 +1,5 @@
 $(function() {
-  init('body');
+  init('#example');
   getSampleJson();
 });
 
@@ -18,7 +18,7 @@ var ajaxOptions = {
 
 function init (selector) {
   $(selector)
-    .append('<h1>Simple Ajax Example</h1>')
+    .append('<h2>Simple Ajax Example</h2>')
     .append('<div id="data"></div>');
 }
 

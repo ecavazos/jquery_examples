@@ -22,7 +22,7 @@ Screw.Unit(function() {
       });
       
       it('should add header to page with "Simple Ajax Example" as the value', function() {
-        expect($('h1:first').text()).to(equal, 'Simple Ajax Example');
+        expect($('h2:first').text()).to(equal, 'Simple Ajax Example');
       });
     
       it('should add data placeholder to the page', function() {
