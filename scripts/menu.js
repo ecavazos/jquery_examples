@@ -1,3 +1,7 @@
+$(function() {
+  new Menu('body');
+});
+
 var Menu = function(options) {
   this._title = 'jQuery, Easy As Pie';
   this._opts = $.extend(this._defaults, options);
@@ -6,7 +10,7 @@ var Menu = function(options) {
 
 Menu.prototype = {
   _init: function() {
-    $(this._opts.appendTo).append('<div id="menu-bar"></div>');
+    $(this._opts.prependTo).prepend('<div id="menu-bar"></div>');
     var link = '<a href="'+this._indexUrl()+'">'+this._title+'</a>';
     $('#menu-bar').append('<h1>'+link+'</h1>');
   },
@@ -34,6 +38,6 @@ Menu.prototype = {
   },
   
   _defaults: {
-    appendTo: 'body'
+    prependTo: 'body'
   }
 };

@@ -3,7 +3,7 @@ Screw.Unit(function() {
     var menu;
     
     before(function() {
-      menu = new Menu({appendTo: '#dom_test'});
+      menu = new Menu({prependTo: '#dom_test'});
     });
     
     it('should add menu bar to view', function() {

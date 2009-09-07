@@ -36,6 +36,10 @@ p {
   margin: 0;
   padding: 0;
 }
+#menu-bar a {
+  color: #fff;
+  text-decoration: none;
+}
 .chapter {
   margin: 20px;
 }
